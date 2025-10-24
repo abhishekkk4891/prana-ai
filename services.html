@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - Prana AI</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo">
+  <img src="assets/logo.png" alt="Prana AI Logo" />
+</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Our Services</a>
+          <div class="dropdown-content">
+            <a href="./services/service1.html">Collaborate</a>
+             <a href="./services/service2.html">Custom Identity</a>
+            <a href="./services/service3.html">Video Content</a>
+            <a href="./services/service4.html">AI Product Shoot</a>
+            <a href="./services/service5.html">Ai Brand Personalities</a>
+          </div>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="index.html#contact" class="contact-btn">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="services-header">
+      <h1>Our Services</h1>
+      <p>
+        At Prana AI, we blend creativity and technology to help brands stand out in the digital age.
+        Our innovative AI solutions bring your vision to life—whether through virtual influencers,
+        custom AI personas, or stunning product visuals.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" onclick="openService('./services/service1.html')">
+        <img src="./assets/service1.png" alt="Service 1">
+        <h3>Choose from Our Existing AI Influencers</h3>
+        <p>Let's Collaborate</p>
+      </div>
+
+      <div class="service-card" onclick="openService('./services/service2.html')">
+        <img src="./assets/service2.png" alt="Service 2">
+        <h3>Create a Custom Identity for Your Brand</h3>
+        <p>Let's create a unique brand identity</p>
+      </div>
+
+      <div class="service-card video-service" onclick="openService('./services/service3.html')">
+  <div class="media-container">
+    <img src="./assets/product.jpg" alt="Service 3 Thumbnail" class="thumbnail">
+    <video class="preview-video" muted loop playsinline preload="none">
+      <source src="./assets/product.mp4" type="video/mp4">
+    </video>
+  </div>
+  <h3>AI Video Content for Brands</h3>
+  <p>Let's get some crazy videos for your brand</p>
+</div>
+
+
+      <div class="service-card" onclick="openService('./services/service4.html')">
+        <img src="./assets/service4.png" alt="Service 4">
+        <h3>AI Product Shooting</h3>
+        <p>Let's shoot your product, without studio</p>
+      </div>
+
+      <div class="service-card" onclick="openService('./services/service5.html')">
+        <img src="./assets/service5.png" alt="Service 5">
+        <h3>AI Brand Personalities</h3>
+        <p>Let's use AI for stunning content</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Prana AI. All Rights Reserved.</p>
+  </footer>
+
+  <script src="services.js"></script>
+</body>
+</html>
