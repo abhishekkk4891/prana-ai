@@ -38,7 +38,7 @@ app.post("/submit", (req, res) => {
   fs.writeFileSync(filepath, JSON.stringify(dataToSave, null, 2));
 
   console.log(`✅ New message saved: ${filename}`);
-  res.json({ success: true, message: "Form submitted successfully!" });
+  res.json({ message: "Form submitted successfully!" });
 });
 
 app.listen(PORT, () => {

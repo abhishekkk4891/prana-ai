@@ -60,12 +60,12 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
     const result = await res.json();
 
-    if (result.success) {
-      alert("✅ Message submitted successfully!");
-      e.target.reset();
-    } else {
-      alert("❌ Something went wrong. Please try again.");
-    }
+    if (result.message) {
+  alert("✅ " + result.message);
+  e.target.reset();
+} else {
+  alert("❌ Something went wrong. Please try again.");
+}
   } catch (error) {
     console.error("Error:", error);
     alert("🚫 Unable to submit form. Please check your connection or try again later.");
