@@ -48,7 +48,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const data = { firstName, lastName, email, message };
 
   try {
-    const res = await fetch("/submit-form", {
+    const res = await fetch("/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
