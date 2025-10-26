@@ -1,9 +1,14 @@
-// Smooth scroll for About Us and Contact links
+// ===== SMOOTH SCROLL FOR NAV LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    const target = document.querySelector(href);
+
+    // If it's a same-page link
     if (target) {
+      e.preventDefault();
+      history.pushState(null, null, href); // update hash in URL smoothly
+
       window.scrollTo({
         top: target.offsetTop - 70,
         behavior: 'smooth'
@@ -12,14 +17,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Prevent auto-scroll if page loads with a hash (like #about)
-window.addEventListener('DOMContentLoaded', () => {
-  if (window.location.hash) {
-    // Instantly scroll to top to cancel jump
-    window.scrollTo(0, 0);
-    
-    // Optional: Remove hash from URL to keep it clean
-    history.replaceState(null, null, window.location.pathname);
+// ===== SCROLL TO SECTION IF COMING FROM ANOTHER PAGE (e.g. index.html#contact) =====
+window.addEventListener('load', () => {
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      // Delay ensures content & layout are ready
+      setTimeout(() => {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }, 500);
+    }
   }
 });
 
@@ -61,13 +72,27 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     const result = await res.json();
 
     if (result.message) {
-  alert("✅ " + result.message);
-  e.target.reset();
-} else {
-  alert("❌ Something went wrong. Please try again.");
-}
+      alert("✅ " + result.message);
+      e.target.reset();
+    } else {
+      alert("❌ Something went wrong. Please try again.");
+    }
   } catch (error) {
     console.error("Error:", error);
     alert("🚫 Unable to submit form. Please check your connection or try again later.");
   }
+});
+
+// ===== SIMPLE INTERACTIVITY FOR PORTFOLIO BUTTONS =====
+document.querySelectorAll(".portfolio-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    alert("Portfolio page coming soon!");
+  });
+});
+
+// portfolio validation
+document.querySelectorAll(".portfolio-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    alert("Portfolio page coming soon!");
+  });
 });

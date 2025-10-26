@@ -105,7 +105,7 @@ body {
 }
 
 .hero1 {
-  background-image: url('assets/landingsample.png');
+  background-image: url('assets/landingfinal.png');
 }
 
 .hero2 {
@@ -411,26 +411,18 @@ textarea:focus {
 
 /* ===== FOOTER ===== */
 .footer {
-  background-color: #111;
-  color: #fff;
   text-align: center;
-  padding: 40px 10%;
-  font-family: 'Inter', sans-serif;
-}
-
-.footer .social-icons {
-  margin: 20px 0;
-}
-
-.footer .social-icons a {
-  color: #ffffff;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.footer .social-icons a:hover {
+  padding: 20px;
+  background-color: #000;
   color: #999;
+  border-top: 1px solid #1a1a1a;
+  font-size: 0.9rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
