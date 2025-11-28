@@ -1,0 +1,115 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 60px;
+  align-items: center;
+  border-bottom: 1px solid #111;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #5682B1;
+}
+
+.contact-btn {
+  background: #5682B1;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+/* PORTFOLIO */
+.portfolio-section {
+  width: 100%;
+  padding-top: 40px;
+   padding: 0;
+}
+
+.portfolio-section h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.portfolio-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+/* CTA IMAGE OVERLAY */
+.cta-wrapper {
+  position: relative;
+}
+
+.cta-box {
+  position: absolute;
+  bottom: 35px;
+  left: 45px;
+  background: rgba(0,0,0,0.55);
+  padding: 18px 24px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.cta-box h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.cta-btn {
+  text-decoration: none;
+  background: #5682B1;
+  padding: 10px 24px;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #3f6e9c;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px 0;
+  background: #111;
+  margin-top: 40px;
+  color: #aaa;
+  font-size: 0.9rem;
+}

@@ -116,41 +116,80 @@ body {
   margin-bottom: 20px;
 }
 
-/* ===== IMAGE GRID ===== */
-.image-section h3 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin: 30px 0 15px;
-}
-
-.image-grid {
+/* Services Grid */
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 40px;
 }
 
-.img-box {
-  text-align: center;
+.service-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.img-box img {
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.service-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
-.img-box img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+.service-card:hover img {
+  transform: scale(1.1);
 }
 
-.img-box p {
-  margin-top: 10px;
-  color: #ccc;
+.service-card h3 {
+  font-size: 1.1rem;
+  margin: 15px 20px 5px;
 }
+
+.service-card p {
+  color: #aaa;
+  margin: 0 20px 20px;
+  font-size: 0.9rem;
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+.how-it-works {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* Wrapper to make it look nice */
+.how-img-wrapper {
+  width: 100%;
+  max-width: 850px;   /* perfect A4 visual size */
+  margin: 0 auto;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+/* A4 image styling */
+.how-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
 
 /* ===== CONTACT BUTTON MAIN ===== */
 .contact-btn-main {
