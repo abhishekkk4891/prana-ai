@@ -147,6 +147,22 @@ h1 {
   background-color: #008c9e;
 }
 
+.portfolio {
+  margin-top: 15px;
+  background-color: #00bcd4;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.portfolio:hover {
+  background-color: #008c9e;
+}
+
 /* ===== IMAGES ===== */
 .influencer-img {
   flex: 1;

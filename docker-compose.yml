@@ -1,0 +1,10 @@
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: prana-ai
+    container_name: prana-ai
+    ports:
+      - "8112:3000"
