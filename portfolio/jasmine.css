@@ -62,11 +62,22 @@ body {
   font-weight: 700;
 }
 
+
+@media (max-width: 768px) {
+  .hero-section,
+  .hero-image {
+    height: auto;
+    aspect-ratio: 9/16 !important; /* invert ratio for mobile */
+    object-fit: cover;
+  }
+}
+
+
 .portfolio-img {
   width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
 }
 
 /* CTA IMAGE OVERLAY */
@@ -104,6 +115,29 @@ body {
   background-color: #3f6e9c;
 }
 
+/* ===== RESPONSIVE CTA FOR MOBILE ===== */
+@media (max-width: 768px) {
+  .cta-box {
+    bottom: 20px;       /* move box slightly up */
+    left: 20px;         /* reduce left margin */
+    right: 20px;        /* prevents overflow */
+    padding: 14px 18px; /* reduce padding */
+    text-align: left;   /* keeps aesthetic */
+  }
+
+  .cta-box h2 {
+    font-size: 1.2rem;  /* reduce heading size */
+    margin-bottom: 10px;
+  }
+
+  .cta-btn {
+    padding: 8px 16px;  /* smaller button */
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+}
+
+
 /* FOOTER */
 .footer {
   text-align: center;
@@ -112,4 +146,41 @@ body {
   margin-top: 40px;
   color: #aaa;
   font-size: 0.9rem;
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background: #000;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
 }
