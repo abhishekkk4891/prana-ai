@@ -52,7 +52,7 @@ body {
 .portfolio-section {
   width: 100%;
   padding-top: 40px;
-   padding: 0;
+  padding: 0;
 }
 
 .portfolio-section h1 {
@@ -71,7 +71,6 @@ body {
     object-fit: cover;
   }
 }
-
 
 .portfolio-img {
   width: 100%;
@@ -148,7 +147,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Hide hamburger on desktop */
+/* HAMBURGER */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -156,9 +155,8 @@ body {
   color: #fff;
 }
 
-/* Mobile navbar */
+/* MOBILE NAVBAR */
 @media (max-width: 768px) {
-
   .nav-links {
     position: fixed;
     top: 70px;
@@ -167,9 +165,10 @@ body {
     height: 100vh;
     background: #000;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;  /* Reduced gap for better alignment */
     padding-top: 40px;
     transition: right 0.3s ease;
+    align-items: center;  /* Center align the menu items */
   }
 
   .nav-links.show {
@@ -182,5 +181,15 @@ body {
 
   .navbar {
     padding: 15px 25px;
+  }
+
+  .nav-links li {
+    width: 100%;  /* Ensure each link takes full width */
+    text-align: center;  /* Center align the text */
+  }
+
+  .nav-links li a {
+    padding: 15px 0;  /* Add padding for easier clicks */
+    display: block;
   }
 }

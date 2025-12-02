@@ -96,3 +96,10 @@ document.querySelectorAll(".portfolio-btn").forEach((btn) => {
     alert("Portfolio page coming soon!");
   });
 });
+
+
+// Hamburger toggle functionality
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('show');
+  });
+

@@ -98,11 +98,17 @@ body {
 /* ===== HERO SECTIONS ===== */
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 100vh;  /* Full viewport height */
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover; /* Ensures image covers entire container */
+  background-repeat: no-repeat;  /* Prevents repetition of background images */
+  display: block;  /* Ensure it's treated as a block element */
 }
+.hero {
+  margin: 0;
+  padding: 0; /* Remove any padding that might create unwanted space */
+}
+
 
 .hero1 {
   background-image: url('assets/landingfinal.png');
@@ -219,6 +225,13 @@ body {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
+}
+
+/* Responsive behavior for images on smaller screens */
+@media (max-width: 768px) {
+  .hero {
+    height: 30vh /* Ensure the entire image is contained within the section */
+  }
 }
 
 /* RESPONSIVE */
@@ -431,5 +444,53 @@ textarea:focus {
 /* Smooth Scroll for Navbar */
 html {
   scroll-behavior: smooth;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background: #000;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+    transition: right 0.3s ease;
+    align-items: center;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    padding: 15px 0;
+    display: block;
+  }
 }
 
