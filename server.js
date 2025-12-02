@@ -45,10 +45,3 @@ app.listen(PORT, () => {
   console.log(`✅ Server running at: http://localhost:${PORT}`);
 });
 
-// Hamburger Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show'); // Toggle the show class to open/close the menu
-});
