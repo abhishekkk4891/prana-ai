@@ -20,6 +20,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 60px;
+  position: relative;
   z-index: 1000;
 }
 
@@ -28,6 +29,7 @@ body {
   width: auto;
 }
 
+/* NAV LINKS (DESKTOP) */
 .nav-links {
   list-style: none;
   display: flex;
@@ -45,7 +47,7 @@ body {
   color: #5682B1;
 }
 
-/* ===== DROPDOWN ===== */
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -75,7 +77,7 @@ body {
   display: block;
 }
 
-/* ===== CONTACT BUTTON ===== */
+/* CONTACT BUTTON IN NAV */
 .contact-btn {
   background-color: #5682B1;
   padding: 8px 18px;
@@ -86,6 +88,15 @@ body {
 
 .contact-btn:hover {
   background-color: #466e95;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto; /* ensures extreme right */
 }
 
 /* ===== SERVICE SECTION ===== */
@@ -112,7 +123,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* Services Grid */
+/* ===== GRID ===== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -154,9 +165,7 @@ body {
   font-size: 0.9rem;
 }
 
-
-
-/* ===== CONTACT BUTTON MAIN ===== */
+/* CONTACT BUTTON MAIN */
 .contact-btn-main {
   background-color: #fff;
   color: #000;
@@ -176,7 +185,7 @@ body {
   color: #fff;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 25px 0;
@@ -186,8 +195,35 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== MOBILE NAVBAR ===== */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;            /* Full width menu below navbar */
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    display: none;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: #000;
+  }
+
   .service-section {
     padding: 60px 8%;
   }

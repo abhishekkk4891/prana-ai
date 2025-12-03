@@ -1,6 +1,8 @@
-console.log("Jasmine portfolio page loaded.");
+console.log("Jasmine portfolio page loaded");
 
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("show");
-}
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-links");
 
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});

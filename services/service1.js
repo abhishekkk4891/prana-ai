@@ -4,3 +4,9 @@ document.querySelectorAll(".portfolio-btn").forEach((btn) => {
     alert("Portfolio page coming soon!");
   });
 });
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});

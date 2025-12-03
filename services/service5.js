@@ -1,12 +1,15 @@
 // Redirect to contact section on main page
-document.getElementById("contactBtn").addEventListener("click", () => {
-  window.location.href = "../index.html#contact";
-});
-
-
-// portfolio validation
-document.querySelectorAll(".portfolio-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    alert("Portfolio page coming soon!");
+const contactBtn = document.getElementById("contactBtn");
+if (contactBtn) {
+  contactBtn.addEventListener("click", () => {
+    window.location.href = "../index.html#contact";
   });
+}
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
 });

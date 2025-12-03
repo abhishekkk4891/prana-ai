@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,29 +6,39 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   background-color: #000;
   color: #fff;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
 /* ===== NAVBAR ===== */
 .navbar {
-  top: 0;
   width: 100%;
-  background-color: #000;
+  background: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 60px;
+  position: relative;
   z-index: 1000;
-  scroll-behavior: smooth;
 }
 
+/* Logo */
 .logo img {
-  height: 30px; /* adjust size as needed */
+  height: 30px;
   width: auto;
 }
+
+/* NAV + HAMBURGER WRAPPER */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* NAV LINKS */
+nav { display: block; }
 
 .nav-links {
   list-style: none;
@@ -38,24 +48,23 @@ body {
 }
 
 .nav-links li a {
-  text-decoration: none;
   color: #fff;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #5682B1;
 }
 
-/* ===== DROPDOWN ===== */
-.dropdown {
-  position: relative;
-}
+/* DROPDOWN */
+.dropdown { position: relative; }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #000;
+  background: #000;
+  border: 1px solid #1a1a1a;
   min-width: 160px;
   top: 100%;
   left: 0;
@@ -63,32 +72,66 @@ body {
 }
 
 .dropdown-content a {
-  color: white;
+  display: block;
   padding: 10px 15px;
+  color: white;
   text-decoration: none;
-  display: block;
 }
 
-.dropdown-content a:hover {
-  background-color: #333;
-}
+.dropdown-content a:hover { background: #333; }
+.dropdown:hover .dropdown-content { display: block; }
 
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
-  display: block;
-}
-
-/* ===== CONTACT BUTTON ===== */
+/* CONTACT BUTTON */
 .contact-btn {
-  background-color: #5682B1;
+  background: #5682B1;
   padding: 8px 18px;
   border-radius: 8px;
-  color: white !important;
-  transition: background-color 0.3s ease;
+  color: #fff !important;
+  transition: 0.3s ease;
 }
 
-.contact-btn:hover {
-  background-color: #466e95;
+.contact-btn:hover { background: #466e95; }
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: white;
+}
+
+/* ===== MOBILE NAV ===== */
+@media (max-width: 768px) {
+  .navbar { padding: 15px 25px; }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  nav { width: 100%; }
+
+  .hamburger { display: block; margin-left: auto; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: black;
+    padding: 25px 0;
+    border-top: 1px solid #1a1a1a;
+    gap: 20px;
+  }
+
+  .nav-links.show { display: flex; }
+
+  .dropdown-content {
+    position: static;
+    border: none;
+  }
 }
 
 /* ===== SERVICE SECTION ===== */
@@ -98,37 +141,35 @@ body {
 
 .service-section h1 {
   font-size: 2.2rem;
-  font-weight: 700;
   margin-bottom: 25px;
 }
 
-.service-section .intro {
+.intro {
   color: #ccc;
   margin-bottom: 40px;
-  font-size: 1rem;
 }
 
 .service-points {
-  list-style-type: disc;
+  list-style: disc;
   margin-left: 20px;
   margin-bottom: 40px;
   color: #ccc;
 }
 
+/* MAIN BUTTON */
 .contact-btn-main {
-  background-color: #fff;
+  background: #fff;
   color: #000;
   padding: 12px 30px;
-  font-size: 1rem;
-  border: none;
   border-radius: 8px;
+  border: none;
   cursor: pointer;
+  transition: 0.3s;
   font-weight: 600;
-  transition: all 0.3s ease;
 }
 
 .contact-btn-main:hover {
-  background-color: #5682B1;
+  background: #5682B1;
   color: #fff;
 }
 
@@ -137,22 +178,7 @@ footer {
   text-align: center;
   padding: 25px 0;
   background: #111;
-  margin-top: 60px;
   color: #aaa;
+  margin-top: 60px;
   font-size: 0.9rem;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .service-section {
-    padding: 60px 8%;
-  }
-
-  .service-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .contact-btn-main {
-    width: 100%;
-  }
 }

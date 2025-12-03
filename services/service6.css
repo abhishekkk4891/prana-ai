@@ -21,6 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 60px;
+  position: relative;
   z-index: 1000;
 }
 
@@ -29,6 +30,7 @@ body {
   width: auto;
 }
 
+/* DESKTOP MENU */
 .nav-links {
   list-style: none;
   display: flex;
@@ -46,10 +48,8 @@ body {
   color: #5682B1;
 }
 
-/* ===== DROPDOWN ===== */
-.dropdown {
-  position: relative;
-}
+/* DROPDOWN */
+.dropdown { position: relative; }
 
 .dropdown-content {
   display: none;
@@ -68,15 +68,10 @@ body {
   display: block;
 }
 
-.dropdown-content a:hover {
-  background-color: #333;
-}
+.dropdown-content a:hover { background-color: #333; }
+.dropdown:hover .dropdown-content { display: block; }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* ===== CONTACT BUTTON (NAV) ===== */
+/* NAV CONTACT BTN */
 .contact-btn {
   background-color: #5682B1;
   padding: 8px 18px;
@@ -85,11 +80,18 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.contact-btn:hover {
-  background-color: #466e95;
+.contact-btn:hover { background-color: #466e95; }
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto;
 }
 
-/* ===== SERVICE SECTION ===== */
+/* ===== SERVICE PAGE ===== */
 .service-section {
   padding: 80px 10%;
 }
@@ -113,14 +115,13 @@ body {
   margin-bottom: 30px;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 40px;
 }
 
-/* ===== CARD ===== */
 .service-card {
   background: #111;
   border-radius: 12px;
@@ -130,10 +131,10 @@ body {
 
 .service-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
-/* ===== SLIDER INSIDE CARD ===== */
+/* SLIDER */
 .slider-container {
   position: relative;
   width: 100%;
@@ -141,19 +142,15 @@ body {
   overflow: hidden;
 }
 
-.before-img,
-.after-img {
+.before-img, .after-img {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.after-img {
-  clip-path: inset(0 100% 0 0);
-}
+.after-img { clip-path: inset(0 100% 0 0); }
 
-/* thin slider line */
 .slider-line {
   position: absolute;
   top: 0;
@@ -165,41 +162,36 @@ body {
   transform: translateX(-50%);
 }
 
-/* circle handle */
 .slider-handle {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
   background: #00eaff;
-  color: #000;
-  font-size: 12px;
-  font-weight: 700;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   box-shadow: 0 0 12px #00eaff;
   cursor: ew-resize;
-  z-index: 10;
+  font-weight: bold;
 }
 
-.slider-card h3,
+/* CARD TEXT */
 .service-card h3 {
   font-size: 1.1rem;
   margin: 15px 20px 5px;
 }
 
-.slider-card p,
 .service-card p {
   color: #aaa;
   margin: 0 20px 20px;
   font-size: 0.9rem;
 }
 
-/* ===== CONTACT BUTTON MAIN ===== */
+/* CONTACT BUTTON MAIN */
 .contact-btn-main {
   background-color: #fff;
   color: #000;
@@ -207,10 +199,10 @@ body {
   font-size: 1rem;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
   display: block;
   margin: 40px auto 0;
+  cursor: pointer;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
@@ -219,7 +211,7 @@ body {
   color: #fff;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 25px 0;
@@ -227,4 +219,31 @@ footer {
   margin-top: 60px;
   color: #aaa;
   font-size: 0.9rem;
+}
+
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    display: none;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+  }
+
+  .nav-links.show { display: flex; }
+
+  .dropdown-content { position: static; background: #000; }
+
+  .service-section { padding: 60px 8%; }
+  .service-section h1 { font-size: 1.8rem; }
+  .contact-btn-main { width: 100%; }
 }

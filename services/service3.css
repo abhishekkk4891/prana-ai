@@ -20,11 +20,26 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 60px;
+  position: relative; /* important for absolute menu */
 }
 
 .logo img {
   height: 30px;
   width: auto;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: auto; /* pushes to extreme right in flex */
+}
+
+/* NAV LINKS (DESKTOP) */
+nav {
+  /* stays in DOM, but UL is what we show/hide */
 }
 
 .nav-links {
@@ -44,6 +59,7 @@ body {
   color: #5682B1;
 }
 
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -73,7 +89,7 @@ body {
   display: block;
 }
 
-/* ===== CONTACT BUTTON ===== */
+/* ===== CONTACT BUTTON (NAV) ===== */
 .contact-btn {
   background-color: #5682B1;
   padding: 8px 18px;
@@ -110,6 +126,10 @@ body {
 }
 
 /* ===== VIDEO GRID ===== */
+.video-section {
+  width: 100%;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -197,6 +217,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  /* SERVICE CONTENT RESPONSIVE (unchanged) */
   .service-section {
     padding: 60px 8%;
   }
@@ -207,5 +228,43 @@ footer {
 
   .contact-btn-main {
     width: 100%;
+  }
+
+  /* NAVBAR RESPONSIVE */
+  .hamburger {
+    display: block; /* show icon on mobile */
+  }
+
+  /* Turn menu into dropdown overlay */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #000;
+    padding: 20px 0;
+    border-top: 1px solid #1a1a1a;
+    display: none; /* hidden by default */
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex; /* toggled class shows menu */
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    border: none;
+  }
+
+  .dropdown-content a {
+    padding: 8px 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 }

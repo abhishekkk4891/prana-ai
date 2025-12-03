@@ -40,3 +40,15 @@ document.querySelectorAll(".slider-container").forEach(container => {
   window.addEventListener("touchmove", e => { if (isDragging) updateSlider(e.touches[0].clientX); }, { passive: true });
   window.addEventListener("touchend", stop);
 });
+
+// Contact redirect
+document.getElementById("contactBtn").addEventListener("click", () => {
+  window.location.href = "../index.html#contact";
+});
+
+// Mobile Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-links");
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});

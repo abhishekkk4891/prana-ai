@@ -11,25 +11,29 @@ body {
   color: #fff;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 .navbar {
   width: 100%;
   background: #000;
   display: flex;
   justify-content: space-between;
-  padding: 15px 60px;
   align-items: center;
+  padding: 15px 60px;
   border-bottom: 1px solid #111;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo img {
   height: 30px;
 }
 
+/* DESKTOP MENU */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .nav-links li a {
@@ -42,34 +46,66 @@ body {
   color: #5682B1;
 }
 
+/* NAV CONTACT BUTTON */
 .contact-btn {
   background: #5682B1;
   padding: 8px 18px;
   border-radius: 8px;
 }
 
-/* PORTFOLIO */
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto;
+}
+
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #000;
+    padding: 25px 0;
+    gap: 20px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li a {
+    padding: 14px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+}
+
+/* ===== PORTFOLIO CONTENT (UNCHANGED) ===== */
 .portfolio-section {
   width: 100%;
   padding-top: 40px;
   padding: 0;
-}
-
-.portfolio-section h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-
-
-@media (max-width: 768px) {
-  .hero-section,
-  .hero-image {
-    height: auto;
-    aspect-ratio: 9/16 !important; /* invert ratio for mobile */
-    object-fit: cover;
-  }
 }
 
 .portfolio-img {
@@ -114,28 +150,17 @@ body {
   background-color: #3f6e9c;
 }
 
-/* ===== RESPONSIVE CTA FOR MOBILE ===== */
+/* CTA RESPONSIVE */
 @media (max-width: 768px) {
   .cta-box {
-    bottom: 20px;       /* move box slightly up */
-    left: 20px;         /* reduce left margin */
-    right: 20px;        /* prevents overflow */
-    padding: 14px 18px; /* reduce padding */
-    text-align: left;   /* keeps aesthetic */
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 14px 18px;
   }
-
-  .cta-box h2 {
-    font-size: 1.2rem;  /* reduce heading size */
-    margin-bottom: 10px;
-  }
-
-  .cta-btn {
-    padding: 8px 16px;  /* smaller button */
-    font-size: 0.9rem;
-    border-radius: 6px;
-  }
+  .cta-box h2 { font-size: 1.2rem; }
+  .cta-btn { padding: 8px 16px; font-size: 0.9rem; }
 }
-
 
 /* FOOTER */
 .footer {
@@ -145,51 +170,4 @@ body {
   margin-top: 40px;
   color: #aaa;
   font-size: 0.9rem;
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* MOBILE NAVBAR */
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 60%;
-    height: 100vh;
-    background: #000;
-    flex-direction: column;
-    gap: 20px;  /* Reduced gap for better alignment */
-    padding-top: 40px;
-    transition: right 0.3s ease;
-    align-items: center;  /* Center align the menu items */
-  }
-
-  .nav-links.show {
-    right: 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .navbar {
-    padding: 15px 25px;
-  }
-
-  .nav-links li {
-    width: 100%;  /* Ensure each link takes full width */
-    text-align: center;  /* Center align the text */
-  }
-
-  .nav-links li a {
-    padding: 15px 0;  /* Add padding for easier clicks */
-    display: block;
-  }
 }

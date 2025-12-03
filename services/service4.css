@@ -20,6 +20,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 60px;
+  position: relative; /* Needed for dropdown on mobile */
   z-index: 1000;
 }
 
@@ -28,6 +29,7 @@ body {
   width: auto;
 }
 
+/* NAV LINKS DESKTOP */
 .nav-links {
   list-style: none;
   display: flex;
@@ -45,7 +47,7 @@ body {
   color: #5682B1;
 }
 
-/* ===== DROPDOWN ===== */
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -75,7 +77,7 @@ body {
   display: block;
 }
 
-/* ===== CONTACT BUTTON ===== */
+/* CONTACT BUTTON IN NAV */
 .contact-btn {
   background-color: #5682B1;
   padding: 8px 18px;
@@ -86,6 +88,15 @@ body {
 
 .contact-btn:hover {
   background-color: #466e95;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto; /* keeps it at extreme right */
 }
 
 /* ===== SERVICE SECTION ===== */
@@ -158,23 +169,15 @@ body {
   font-size: 0.9rem;
 }
 
-/* ===== HOW IT WORKS SECTION ===== */
+/* ===== HOW IT WORKS ===== */
 .how-it-works {
   margin-top: 60px;
   text-align: center;
 }
 
-.how-it-works h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: #fff;
-}
-
-/* Wrapper to make it look nice */
 .how-img-wrapper {
   width: 100%;
-  max-width: 850px;   /* perfect A4 visual size */
+  max-width: 850px;
   margin: 0 auto;
   background: #111;
   padding: 20px;
@@ -182,16 +185,13 @@ body {
   box-shadow: 0 0 20px rgba(255,255,255,0.05);
 }
 
-/* A4 image styling */
 .how-img {
   width: 100%;
-  height: auto;
   display: block;
   border-radius: 6px;
 }
 
-
-/* ===== CONTACT BUTTON MAIN ===== */
+/* CONTACT BUTTON MAIN */
 .contact-btn-main {
   background-color: #fff;
   color: #000;
@@ -221,17 +221,32 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== MOBILE NAVBAR ===== */
 @media (max-width: 768px) {
-  .service-section {
-    padding: 60px 8%;
+  .hamburger {
+    display: block; /* show icon */
   }
 
-  .service-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .contact-btn-main {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;            /* full width below navbar */
     width: 100%;
+    background: #000;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    display: none;      /* hidden initially */
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .nav-links.show {
+    display: flex; /* visible on click */
+  }
+
+  .dropdown-content {
+    position: static;
+    background: #000;
   }
 }
