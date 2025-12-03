@@ -1,14 +1,36 @@
 console.log("Portfolio page loaded");
 
 // Hamburger toggle
-const hamburger = document.querySelector(".hamburger");
+const hamburger = document.getElementById("hamburger");
 const navlinks = document.querySelector(".nav-links");
+hamburger.addEventListener("click", () => navlinks.classList.toggle("show"));
 
-if (hamburger && navlinks) {
-  hamburger.addEventListener("click", () => {
-    navlinks.classList.toggle("show");
+/* ===== PORTFOLIO LOGIC ===== */
+
+// List of READY portfolios (only Jasmine for now)
+const availablePortfolios = ["jasmine"];  
+// Later just add names here: ["jasmine", "ojasvi", "nidhi"]
+
+document.querySelectorAll(".portfolio-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const href = item.dataset.href;     // e.g. "./jasmine.html"
+    const name = href.split("/").pop().split(".")[0]; // extract "jasmine"
+
+    if (availablePortfolios.includes(name)) {
+      // Portfolio exists → open page
+      window.location.href = href;
+    } else {
+      // Portfolio not ready → show validation message
+      alert("🚀 Portfolio coming soon!");
+    }
   });
-}
+
+  // Keyboard accessibility (Enter key)
+  item.setAttribute("tabindex", "0");
+  item.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") item.click();
+  });
+});
 
 /* ===== MOBILE DROPDOWN OPEN ON TAP ===== */
 document.querySelectorAll(".dropdown > a").forEach(trigger => {
@@ -16,23 +38,6 @@ document.querySelectorAll(".dropdown > a").forEach(trigger => {
     if (window.innerWidth <= 768) {
       e.preventDefault();
       trigger.nextElementSibling.classList.toggle("show");
-    }
-  });
-});
-
-/* ===== PORTFOLIO ITEM CLICK ===== */
-document.querySelectorAll(".portfolio-item").forEach(item => {
-  item.addEventListener("click", () => {
-    const href = item.dataset.href;
-    if (href) window.location.href = href;
-  });
-
-  item.setAttribute("tabindex", "0");
-
-  item.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      const href = item.dataset.href;
-      if (href) window.location.href = href;
     }
   });
 });

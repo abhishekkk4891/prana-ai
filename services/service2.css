@@ -182,3 +182,21 @@ footer {
   margin-top: 60px;
   font-size: 0.9rem;
 }
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.social-links img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
