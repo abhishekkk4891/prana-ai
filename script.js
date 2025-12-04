@@ -59,11 +59,12 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const data = { firstName, lastName, email, message };
 
   try {
-    const res = await fetch("/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const res = await fetch(`${window.location.origin}/submit`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data),
+});
+
 
     if (!res.ok) {
       throw new Error("Network response was not ok");
