@@ -5,8 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     image: prana-ai
+    environment:
+      - ${PORT}=${PORT}
     container_name: prana-ai
     volumes:
-      - ./data:/app/data/
+      - /home/ubuntu/enquiry/data:/app/data/
+      - /home/ubuntu/enquiry/sent_emails:/app/sent_emails/
     ports:
-      - "8112:3000"
+      - "${PORT}:3000"

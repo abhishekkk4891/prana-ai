@@ -24,7 +24,7 @@ app.post("/submit", (req, res) => {
     null, 2
   ));
 
-  res.json({ message: "Form submitted successfully!" });
+  res.json({ message: "Thank you for your enquiry! Our team has received your message and will get back to you shortly." });
 });
 
 app.listen(PORT, "0.0.0.0", () =>
